@@ -1,0 +1,78 @@
+.body {
+  position: relative;
+  margin: 10px 0 50px 0;
+}
+.body .info {
+  margin: 0 30px;
+}
+.body .info > p {
+  text-align: right;
+  font-size: 20px;
+}
+.body .info .title {
+  font-size: 20px;
+  letter-spacing: 0.5px;
+  font-weight: 600;
+  margin: 0 auto;
+  padding-top: 30px;
+  text-transform: uppercase;
+}
+.body .info .addToCart {
+  font-weight: 400;
+  cursor: pointer;
+}
+.body .info > span {
+  position: relative;
+  font-weight: 600;
+  font-size: 18px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+.body .info > span:hover:before {
+  transform: scaleX(1);
+  transform-origin: left;
+  transition: transform 0.25s;
+}
+.body .info > span:before {
+  content: "";
+  width: 100%;
+  height: 1px;
+  background-color: rgb(131, 131, 131);
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.25s;
+}
+.body .imageContainer {
+  max-width: 100%;
+}
+.body .imageContainer > img {
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  transition: all 1s;
+}
+.body .imageContainer > img:hover {
+  transform: scale(1.1);
+}
+
+@media (max-width: 960px) {
+  .body .info {
+    margin: 0 10px;
+  }
+  .body .info > p {
+    font-size: 12px;
+  }
+  .body .info .title {
+    font-size: 12px;
+  }
+  .body .info .addToCart {
+    font-size: 12px;
+  }
+}

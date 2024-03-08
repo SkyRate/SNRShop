@@ -1,0 +1,110 @@
+.body {
+  display: flex;
+  position: relative;
+  justify-content: space-between;
+  padding-left: 20px;
+  border-bottom: 2px solid #000;
+  > img {
+    user-select: none;
+    width: 170px;
+    height: 165px;
+    margin: 0 100px 10px 20px;
+  }
+  .grid {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 4fr 2.7fr;
+    grid-column-gap: 20px;
+    grid-row-gap: 30px;
+    margin: 50px 45px 40px 0;
+    align-items: center;
+    > .title {
+      max-width: 250px;
+      font-size: 20px;
+      font-weight: 400;
+    }
+    > .price {
+      padding: 5px 0 10px 0;
+      font-size: 20px;
+      font-weight: 400;
+      text-align: right;
+    }
+    > .count {
+      display: flex;
+      > .totalCount {
+        font-size: 20px;
+      }
+      > .countMinus {
+        margin-right: 10px;
+        cursor: pointer;
+        border: none;
+        background-color: transparent;
+        display: block;
+        &:after {
+          content: "";
+          display: block;
+          height: 1px;
+          width: 15px;
+          background-color: #333333;
+        }
+      }
+      > .countPlus {
+        margin-left: 12px;
+        cursor: pointer;
+        border: none;
+        background-color: transparent;
+
+        &:before,
+        &:after {
+          content: "";
+          height: 1px;
+          display: block;
+          width: 15px;
+          background-color: #333333;
+        }
+        &:after {
+          transform: translate(-50%, -50%);
+        }
+        &:before {
+          transform: translate(-50%, -50%) rotate(90deg);
+        }
+      }
+    }
+  }
+  .deleteItem {
+    text-align: right;
+    > svg {
+      width: 25px;
+      height: 25px;
+      cursor: pointer;
+    }
+  }
+}
+
+@media (max-width: 960px) {
+  .body {
+    margin-top: 50px;
+    > img {
+      user-select: none;
+      width: 130px;
+      height: 120px;
+      margin: 0 30px 10px 20px;
+    }
+    .grid {
+      margin: 0px 45px 40px 0;
+      > .title {
+        font-size: 15px;
+      }
+      > .price {
+        font-size: 14px;
+      }
+    }
+    .deleteItem {
+      > svg {
+        width: 18px;
+        height: 18px;
+        cursor: pointer;
+      }
+    }
+  }
+}
