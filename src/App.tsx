@@ -12,8 +12,8 @@ const App = () => {
       <Header />
       <div className={styles.globalWrapper}>
         <Routes>
-          <Route path="/" element={<Home />}></Route>
-          <Route path="/catalog" element={<Sneakers />} />
+          <Route path="/SNRShop/" element={<Home />}></Route>
+          <Route path="/SNRShop/catalog" element={<Sneakers />} />
         </Routes>
       </div>
       <Footer />
