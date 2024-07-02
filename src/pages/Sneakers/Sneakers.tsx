@@ -17,8 +17,8 @@ export const Sneakers: React.FC = () => {
   const { queryTerm, page, category, filterOpen } = useTypedSelector(
     (state) => state.filters
   );
-  const [minPrice, setMinPrice] = useState();
-  const [maxPrice, setMaxPrice] = useState();
+  const [minPrice, setMinPrice] = useState<number>();
+  const [maxPrice, setMaxPrice] = useState<number>();
   const deboucedMinPrice = useDebounce(minPrice, 500);
   const deboucedMaxPrice = useDebounce(maxPrice, 500);
   const { setQueryTerm, setOpenFilter } = useAction();

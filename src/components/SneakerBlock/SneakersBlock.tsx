@@ -2,9 +2,9 @@ import React from "react";
 import styles from "./SneakerBlock.module.scss";
 import { useTypedSelector } from "../../hooks/useTypedSelector";
 import { useAction } from "../../hooks/useActions";
-import { ICartItems } from "../../redux/Cart/cart.interface";
+import { CartItem } from "../../redux/Cart/cart.interface";
 
-export const SneakersBlock: React.FC<ICartItems> = ({
+export const SneakersBlock: React.FC<CartItem> = ({
   id,
   image,
   title,
@@ -12,9 +12,9 @@ export const SneakersBlock: React.FC<ICartItems> = ({
 }) => {
   const { addItem, removeItem } = useAction();
   const { items } = useTypedSelector((state) => state.cart);
-  const isExists = items.some((r) => r.id === id);
+  const isExists = items.some((r: CartItem) => r.id === id);
   const onClickAdd = () => {
-    const item = {
+    const item: any = {
       id,
       title,
       price,

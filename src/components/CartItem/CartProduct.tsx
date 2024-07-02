@@ -1,18 +1,25 @@
 import { FC } from "react";
 import styles from "./CartItem.module.scss";
 import { GoTrash } from "react-icons/go";
-import { useAction } from "../../hooks/useActions";
-import { ICartItems } from "../../redux/Cart/cart.interface";
 
-export const CartProduct: FC<ICartItems> = ({
+import { CartItem } from "../../redux/Cart/cart.interface";
+
+export interface CartProductProps extends CartItem {
+  removeItem: (id: string) => void;
+  addItem: (item: { id: string }) => void;
+  minusItem: (id: string) => void;
+}
+
+export const CartProduct: FC<CartProductProps> = ({
   title,
   image,
   price,
   id,
   count,
+  removeItem,
+  addItem,
+  minusItem,
 }) => {
-  const { removeItem, addItem, minusItem } = useAction();
-
   const onCLickRemoveItem = () => {
     removeItem(id);
   };

@@ -40,7 +40,9 @@ export const Cart: React.FC = () => {
               <span>BASKET</span>
               <div className={styles.product}>
                 {items.length ? (
-                  items.map((item) => <CartProduct key={item.id} {...item} />)
+                  items.map((item: any) => (
+                    <CartProduct key={item.id} {...item} />
+                  ))
                 ) : (
                   <div className={styles.empty}>Cart is empty!</div>
                 )}

@@ -16,11 +16,7 @@ export const api = createApi({
         }${deboucedMaxPrice > 0 ? `&price_lte=${deboucedMaxPrice}` : ""}${
           category === 0 ? "" : `&category=${category}`
         }`,
-      providesTags: (result, error, queryTerm) => [
-        {
-          id: queryTerm,
-        },
-      ],
+      providesTags: (queryTerm) => [{ type: "Product", id: queryTerm }],
     }),
   }),
 });

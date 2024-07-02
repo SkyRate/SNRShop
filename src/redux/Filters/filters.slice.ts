@@ -43,6 +43,6 @@ export const {
   setPage,
   setTotalPages,
   setProducts,
-  setFilterOpen,
+  setOpenFilter,
 } = filtersSlice.actions;
 export default filtersSlice.reducer;

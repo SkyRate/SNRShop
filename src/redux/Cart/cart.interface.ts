@@ -1,13 +1,14 @@
-export interface ICart {
-  items: ICartItems[];
-  totalPrice: number;
-  searchValue: string;
-}
-export interface ICartItems {
-  id: number;
-  image: string;
+export interface CartItem {
+  id: string;
   title: string;
   price: number;
-  category: string;
+  imageUrl: string;
   count: number;
+  image?: string;
+}
+
+export interface ICart {
+  items: CartItem[];
+  totalPrice: number;
+  searchValue: string;
 }

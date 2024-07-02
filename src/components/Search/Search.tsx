@@ -16,6 +16,7 @@ export const Search: React.FC = () => {
     setQueryTerm(searchTerm);
     setPage(1);
   };
+
   return (
     <div className={styles.content}>
       <CSSTransition
@@ -55,7 +56,7 @@ export const Search: React.FC = () => {
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
             placeholder="Search..."
-            autocomplete="off"
+            autoComplete="off"
           />
 
           <Link className={styles.link} to="/catalog">

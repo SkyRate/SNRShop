@@ -6,7 +6,8 @@ import reset from "../../assets/reset.svg";
 import { useTypedSelector } from "../../hooks/useTypedSelector";
 import { useAction } from "../../hooks/useActions";
 import { brandItem } from "./sneakerFilter.data";
-export const SneakerFilter: FC = ({
+import { IPriceItem } from "./sneakerFilter.interface";
+export const SneakerFilter: FC<IPriceItem> = ({
   minPrice,
   maxPrice,
   setMinPrice,
